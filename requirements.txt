@@ -1,0 +1,17 @@
+
+google-genai==0.3.0
+faiss-cpu==1.7.4
+
+streamlit>=1.28.0
+google-generativeai>=0.3.2
+PyPDF2>=3.0.1
+python-dotenv>=1.0.0
+
+numpy>=1.24.3
+typing-extensions>=4.8.0
+
+pandas>=1.5.0          # For data processing
+plotly>=5.17.0         # For interactive charts  
+requests>=2.31.0       # For web requests
+beautifulsoup4>=4.12.0 # For web scraping
+pillow>=10.0.0         # For image processing
