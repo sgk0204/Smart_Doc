@@ -1,11 +1,5 @@
 # 📚 SmartDoc AI Agent - Complete Documentation
 
-[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Gemini](https://img.shields.io/badge/Powered_by-Google_Gemini-blue.svg)](https://ai.google.dev/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](#)
-
 > **🤖 Intelligent Document Analyzer powered by Google Gemini Pro**  
 > Transform your PDF documents into actionable insights with AI-powered analysis, interactive chat, and professional-grade features.
 
@@ -27,6 +21,8 @@
 - **🔧 Production Ready**: Robust error handling and enterprise-grade features
 
 ---
+## Demo Video
+<video controls src="Smart_doc_demo - Made with Clipchamp.mp4" title="Title">DEMO</video>
 
 ## ✨ Key Features
 
