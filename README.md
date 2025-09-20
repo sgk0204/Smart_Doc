@@ -22,7 +22,7 @@
 
 ---
 ## Demo Video
-<video controls src="Smart_doc_demo - Made with Clipchamp.mp4" title="Title">DEMO</video>
+![Demo](Smart_doc_demo - Made with Clipchamp.mp4)
 
 ## ✨ Key Features
 
