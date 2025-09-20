@@ -487,7 +487,7 @@ def main():
 
     # Header
     st.title("📚 SmartDoc AI Agent")
-    st.markdown("**Advanced Document Analyzer powered by Google Gemini Pro (REVISED VERSION)**")
+    st.markdown("**Advanced Document Analyzer **")
 
     # Create sidebar
     create_sidebar()
