@@ -22,7 +22,7 @@
 
 ---
 ## Demo Video
-![Demo](Smart_doc_demo - Made with Clipchamp.mp4)
+visit (Smart_doc_demo - Made with Clipchamp.mp4) in above repository
 
 ## ✨ Key Features
 
