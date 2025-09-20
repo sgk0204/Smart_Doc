@@ -243,7 +243,7 @@ def main():
     )
 
     st.title("📚 SmartDoc AI Agent")
-    st.markdown("**Intelligent Document Analyzer powered by Google Gemini Pro (REVISED VERSION)**")
+    st.markdown("**Intelligent Document Analyzer **")
 
     # Sidebar configuration
     with st.sidebar:
