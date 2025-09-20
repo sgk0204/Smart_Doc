@@ -14,10 +14,10 @@ import time
 load_dotenv()
 
 class SmartDocAnalyzer:
-    """Enhanced SmartDoc AI Agent - Document Analyzer"""
+    """SmartDoc AI Agent - Document Analyzer"""
 
     def __init__(self, api_key: str = None):
-        """Initialize the enhanced analyzer"""
+        """Initialize the analyzer"""
         self.api_key = api_key or os.getenv("GEMINI_API_KEY") or st.session_state.get("api_key", "")
         self.is_configured = False
         self.model = None
@@ -82,7 +82,7 @@ class SmartDocAnalyzer:
         self.last_request_time = time.time()
 
     def validate_pdf_file(self, uploaded_file) -> Tuple[bool, str]:
-        """Enhanced PDF validation"""
+        """PDF validation"""
         if not uploaded_file:
             return False, "No file uploaded"
 
@@ -107,7 +107,7 @@ class SmartDocAnalyzer:
             return f"{size_bytes / (1024 ** 2):.1f} MB"
 
     def extract_text_from_pdf(self, uploaded_file) -> Tuple[str, dict]:
-        """Enhanced PDF text extraction with detailed metadata"""
+        """PDF text extraction with detailed metadata"""
         try:
             # Create temporary file
             with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
@@ -161,7 +161,7 @@ class SmartDocAnalyzer:
             os.unlink(tmp_file_path)
 
             # Text processing
-            if len(text) > 12000:  # Increased limit for enhanced version
+            if len(text) > 12000:  
                 text = text[:12000] + "\n\n[Content truncated for API optimization...]"
                 metadata['content_truncated'] = True
             else:
@@ -178,7 +178,7 @@ class SmartDocAnalyzer:
 
     def analyze_document(self, text: str, analysis_type: str = "comprehensive", 
                         custom_query: str = "", include_metadata: bool = True) -> str:
-        """Enhanced document analysis with multiple modes"""
+        """document analysis with multiple modes"""
 
         if not self.is_configured or not self.model:
             return "❌ API not configured properly. Please check your API key."
@@ -190,7 +190,7 @@ class SmartDocAnalyzer:
         self.rate_limit_protection()
 
         try:
-            # Enhanced prompts for different analysis types
+            # prompts for different analysis types
             prompts = {
                 "summary": f"""
                 Create a comprehensive summary of this document:
@@ -282,7 +282,7 @@ class SmartDocAnalyzer:
             else:
                 prompt = prompts.get(analysis_type, prompts["comprehensive"])
 
-            # API call with enhanced error handling
+            # API call with error handling
             with st.spinner(f"🤖 Performing {analysis_type} analysis..."):
                 response = self.model.generate_content(prompt)
 
@@ -338,7 +338,7 @@ class SmartDocAnalyzer:
         return results
 
 def create_sidebar():
-    """Enhanced sidebar with more options"""
+    """sidebar with more options"""
     with st.sidebar:
         st.header("🔧 Configuration")
 
@@ -469,9 +469,9 @@ def create_sidebar():
         """)
 
 def main():
-    """Enhanced main application"""
+    """main application"""
     st.set_page_config(
-        page_title="SmartDoc AI Agent Enhanced (REVISED)",
+        page_title="SmartDoc AI Agent",
         page_icon="📚",
         layout="wide",
         initial_sidebar_state="expanded"
@@ -486,7 +486,7 @@ def main():
         st.session_state.analysis_count = 0
 
     # Header
-    st.title("📚 SmartDoc AI Agent Enhanced")
+    st.title("📚 SmartDoc AI Agent")
     st.markdown("**Advanced Document Analyzer powered by Google Gemini Pro (REVISED VERSION)**")
 
     # Create sidebar
@@ -584,7 +584,7 @@ def main():
         show_chat_interface(analyzer)
 
 def process_documents(analyzer, uploaded_files):
-    """Process uploaded documents with enhanced progress tracking"""
+    """Process uploaded documents with progress tracking"""
     st.header("🔄 Processing Documents")
 
     processed_files = []
