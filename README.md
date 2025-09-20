@@ -11,34 +11,6 @@
 
 ---
 
-## 📖 Table of Contents
-
-- [🎯 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [🚀 Quick Start](#-quick-start)
-- [📋 Prerequisites](#-prerequisites)
-- [💿 Installation](#-installation)
-- [⚙️ Configuration](#️-configuration)
-- [🎮 Usage Guide](#-usage-guide)
-- [🔧 API Configuration](#-api-configuration)
-- [📊 Analysis Modes](#-analysis-modes)
-- [💬 Interactive Features](#-interactive-features)
-- [🏗️ Project Structure](#️-project-structure)
-- [📁 File Descriptions](#-file-descriptions)
-- [🆓 Free Tier Information](#-free-tier-information)
-- [⚡ Performance Optimization](#-performance-optimization)
-- [🛠️ Troubleshooting](#️-troubleshooting)
-- [📱 Deployment](#-deployment)
-- [🔒 Security](#-security)
-- [🧪 Testing](#-testing)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🆘 Support](#-support)
-- [📈 Roadmap](#-roadmap)
-- [🏆 Acknowledgments](#-acknowledgments)
-
----
-
 ## 🎯 Overview
 
 **SmartDoc AI Agent** is a sophisticated document analysis platform that leverages Google's Gemini Pro AI to transform PDF documents into comprehensive insights. Whether you're analyzing research papers, business reports, legal documents, or technical manuals, SmartDoc provides intelligent analysis with multiple modes tailored to your specific needs.
@@ -620,7 +592,7 @@ cp .env.example .env
 # Edit .env with your API key
 
 # 5. Run application
-streamlit run app_enhanced_clean.py
+streamlit run app_enhanced.py
 ```
 
 ### Cloud Deployment
@@ -636,102 +608,9 @@ git push origin main
 - Visit share.streamlit.io
 - Connect GitHub repository
 - Set branch to 'main'
-- Set main file to 'app_enhanced_clean.py'
+- Set main file to 'app_enhanced.py'
 
 # 3. Configure secrets
 - Add GEMINI_API_KEY in Streamlit secrets
 - Configure other environment variables
-```
-
-#### Heroku Deployment
-```bash
-# 1. Create Heroku app
-heroku create your-smartdoc-app
-
-# 2. Configure buildpacks
-heroku buildpacks:set heroku/python
-
-# 3. Set environment variables  
-heroku config:set GEMINI_API_KEY=your_api_key_here
-
-# 4. Deploy
-git push heroku main
-
-# 5. Open app
-heroku open
-```
-
-#### Docker Deployment
-```dockerfile
-# Dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-
-# Install dependencies
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Copy application
-COPY . .
-
-# Expose port
-EXPOSE 8501
-
-# Health check
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
-# Run application
-CMD ["streamlit", "run", "app_enhanced_clean.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
-
-```bash
-# Build and run Docker container
-docker build -t smartdoc-ai .
-docker run -p 8501:8501 -e GEMINI_API_KEY=your_key smartdoc-ai
-```
-
-#### AWS Deployment
-```python
-# Using AWS App Runner
-1. Create App Runner service
-2. Connect to GitHub repository  
-3. Configure build settings:
-   - Runtime: Python 3.9
-   - Build command: pip install -r requirements.txt
-   - Start command: streamlit run app_enhanced_clean.py --server.port=8080
-4. Set environment variables
-5. Deploy and access via provided URL
-```
-
-### Production Considerations
-
-#### Security
-```python
-Production Security:
-- Use environment variables for secrets
-- Enable HTTPS/SSL certificates
-- Implement rate limiting
-- Add authentication if needed
-- Regular security updates
-```
-
-#### Monitoring
-```python
-Application Monitoring:
-- Set up health checks
-- Monitor API usage and quotas
-- Track application performance
-- Log error rates and patterns
-- User analytics (optional)
-```
-
-#### Scaling
-```python
-Scaling Considerations:
-- Use load balancing for multiple instances
-- Implement session affinity if needed
-- Monitor resource usage
-- Plan for quota increases
-- Consider caching strategies
 ```
